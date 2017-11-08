@@ -12,7 +12,7 @@ dataPositivos=data(1:muestrasPositivas,1:10);
 dataNegativos=data(muestrasPositivas + 1:end,1:10);
 
 % Seleccionar la cantidad de datos para entrenamiento
-numPTrain = 320;
+numPTrain = 80;
 numNTrain = 130;
 
 % Obtener las matrices de entrenamiento, salidas deseadas y prueba
@@ -43,7 +43,7 @@ RBF_R_Sensibilidad=(RBF_VP/numPositivos)*100;
 
 %Obtener el número de clasificaciones negativas del SVM
 RBF_VN=0;
-for cont=numPositivos + 1:sizePrueba
+for cont=numPositivos + 1:sizePrueba%%17
 if (RBF_Etiquetas(cont,1)==-1)
     RBF_VN=RBF_VN+1;
 end
@@ -73,7 +73,7 @@ if (POLY_Etiquetas(cont,1)==1)
     POLY_VP=POLY_VP+1;
 end
 end
-POLY_R_Sensibilidad=(POLY_VP/numPositivos)*100;
+POLY_R_Sensibilidad=(POLY_VP/216)*100;
 POLY_VN=0;
 for cont=numPositivos + 1:sizePrueba%%17
 if (POLY_Etiquetas(cont,1)==-1)
